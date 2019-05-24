@@ -82,9 +82,9 @@ func New(out io.Writer, prefix string, flag int) *Logger {
 
 func (l *Logger) initLevels() {
 	l.levels = make(map[string]bool)
-	l.levels["info"] = false
-	l.levels["warn"] = false
 	l.levels["error"] = false
+	l.levels["warn"] = false
+	l.levels["info"] = false
 	l.levels["debug"] = false
 	l.levels["trace"] = false
 }
@@ -467,27 +467,27 @@ func GetLevel(level string) bool {
 // ----------------------------------------------------------------------
 
 /*
-Info - This function calls Output to print to the standard logger.
+Error - This function calls Output to print to the standard logger.
 Arguments are handled in the manner of fmt.Print.
 */
-func (l *Logger) Info(v ...interface{}) {
-	l.Output("info", fmt.Sprint(v...))
+func (l *Logger) Error(v ...interface{}) {
+	l.Output("error", fmt.Sprint(v...))
 }
 
 /*
-Infof - This function calls Output to print to the standard logger.
+Errorf - This function calls Output to print to the standard logger.
 Arguments are handled in the manner of fmt.Printf.
 */
-func (l *Logger) Infof(format string, v ...interface{}) {
-	l.Output("info", fmt.Sprintf(format, v...))
+func (l *Logger) Errorf(format string, v ...interface{}) {
+	l.Output("error", fmt.Sprintf(format, v...))
 }
 
 /*
-Infoln - This function calls Output to print to the standard logger.
+Errorln - This function calls Output to print to the standard logger.
 Arguments are handled in the manner of fmt.Println.
 */
-func (l *Logger) Infoln(v ...interface{}) {
-	l.Output("info", fmt.Sprintln(v...))
+func (l *Logger) Errorln(v ...interface{}) {
+	l.Output("error", fmt.Sprintln(v...))
 }
 
 /*
@@ -515,27 +515,27 @@ func (l *Logger) Warnln(v ...interface{}) {
 }
 
 /*
-Error - This function calls Output to print to the standard logger.
+Info - This function calls Output to print to the standard logger.
 Arguments are handled in the manner of fmt.Print.
 */
-func (l *Logger) Error(v ...interface{}) {
-	l.Output("error", fmt.Sprint(v...))
+func (l *Logger) Info(v ...interface{}) {
+	l.Output("info", fmt.Sprint(v...))
 }
 
 /*
-Errorf - This function calls Output to print to the standard logger.
+Infof - This function calls Output to print to the standard logger.
 Arguments are handled in the manner of fmt.Printf.
 */
-func (l *Logger) Errorf(format string, v ...interface{}) {
-	l.Output("error", fmt.Sprintf(format, v...))
+func (l *Logger) Infof(format string, v ...interface{}) {
+	l.Output("info", fmt.Sprintf(format, v...))
 }
 
 /*
-Errorln - This function calls Output to print to the standard logger.
+Infoln - This function calls Output to print to the standard logger.
 Arguments are handled in the manner of fmt.Println.
 */
-func (l *Logger) Errorln(v ...interface{}) {
-	l.Output("error", fmt.Sprintln(v...))
+func (l *Logger) Infoln(v ...interface{}) {
+	l.Output("info", fmt.Sprintln(v...))
 }
 
 /*
@@ -617,27 +617,27 @@ func (l *Logger) Levelln(level string, v ...interface{}) {
 }
 
 /*
-Info - This function calls Output to print to the standard logger.
+Error - This function calls Output to print to the standard logger.
 Arguments are handled in the manner of fmt.Print.
 */
-func Info(v ...interface{}) {
-	std.Output("info", fmt.Sprint(v...))
+func Error(v ...interface{}) {
+	std.Output("error", fmt.Sprint(v...))
 }
 
 /*
-Infof - This function calls Output to print to the standard logger.
+Errorf - This function calls Output to print to the standard logger.
 Arguments are handled in the manner of fmt.Printf.
 */
-func Infof(format string, v ...interface{}) {
-	std.Output("info", fmt.Sprintf(format, v...))
+func Errorf(format string, v ...interface{}) {
+	std.Output("error", fmt.Sprintf(format, v...))
 }
 
 /*
-Infoln - This function calls Output to print to the standard logger.
+Errorln - This function calls Output to print to the standard logger.
 Arguments are handled in the manner of fmt.Println.
 */
-func Infoln(v ...interface{}) {
-	std.Output("info", fmt.Sprintln(v...))
+func Errorln(v ...interface{}) {
+	std.Output("error", fmt.Sprintln(v...))
 }
 
 /*
@@ -665,27 +665,27 @@ func Warnln(v ...interface{}) {
 }
 
 /*
-Error - This function calls Output to print to the standard logger.
+Info - This function calls Output to print to the standard logger.
 Arguments are handled in the manner of fmt.Print.
 */
-func Error(v ...interface{}) {
-	std.Output("error", fmt.Sprint(v...))
+func Info(v ...interface{}) {
+	std.Output("info", fmt.Sprint(v...))
 }
 
 /*
-Errorf - This function calls Output to print to the standard logger.
+Infof - This function calls Output to print to the standard logger.
 Arguments are handled in the manner of fmt.Printf.
 */
-func Errorf(format string, v ...interface{}) {
-	std.Output("error", fmt.Sprintf(format, v...))
+func Infof(format string, v ...interface{}) {
+	std.Output("info", fmt.Sprintf(format, v...))
 }
 
 /*
-Errorln - This function calls Output to print to the standard logger.
+Infoln - This function calls Output to print to the standard logger.
 Arguments are handled in the manner of fmt.Println.
 */
-func Errorln(v ...interface{}) {
-	std.Output("error", fmt.Sprintln(v...))
+func Infoln(v ...interface{}) {
+	std.Output("info", fmt.Sprintln(v...))
 }
 
 /*
